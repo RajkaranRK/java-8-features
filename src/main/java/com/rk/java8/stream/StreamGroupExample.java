@@ -13,6 +13,9 @@ public class StreamGroupExample {
         System.out.println("Sum of salary "+sum);
         printLineSep();
 
+        Map<Integer, List<Employee>> groupByAge = employees.stream().collect(Collectors.groupingBy(Employee::getAge));
+        System.out.println(groupByAge);
+        printLineSep();
 
         Map<Tuple,List<Employee>> map = groupByTwoFields(employees);
         System.out.println(map);
