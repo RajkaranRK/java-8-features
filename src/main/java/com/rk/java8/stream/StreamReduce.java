@@ -10,7 +10,9 @@ public class StreamReduce {
         List<Employee> employees = new ArrayList<>();
         populateEmployeeList(employees);
         Optional<Integer> salarySum = employees.stream().map(Employee::getSalary).reduce((e1, e2)->e1+e2);
+        int sum = employees.stream().mapToInt(Employee::getSalary).sum();
         System.out.println(salarySum.get());
+        System.out.println(sum);
     }
 
     public static void populateEmployeeList(List<Employee> employees){
